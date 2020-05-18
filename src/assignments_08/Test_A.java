@@ -12,12 +12,16 @@ public class Test_A extends MyActions {
     @BeforeClass
     public static void setDriver(){
         setChromeDriver();
-        driverChrome.get("https://dgotlieb.github.io/WebCalculator/");
     }
 
     @AfterClass
     public static void quitDriver(){
         driverChrome.quit();
+    }
+
+    @Test
+    public void test_1() {
+        driverChrome.get("https://dgotlieb.github.io/WebCalculator/");
     }
 
     @Test
