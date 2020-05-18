@@ -20,6 +20,11 @@ public class Test_B extends MyActions{
 
     @Test
     public void test_2(){
-        out.println(driverChrome.findElement(By.id("two")).getSize().height);
+        out.println("height of button '2' is " + driverChrome.findElement(By.id("two")).getSize().height+"px");
+    }
+
+    @Test
+    public void test_3(){
+        out.println("width of button '6' is " + driverChrome.findElement(By.id("six")).getSize().width+"px");
     }
 }
