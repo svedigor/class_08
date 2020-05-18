@@ -21,6 +21,6 @@ public class MyActions {
         System.setProperty("webdriver.chrome.driver", "/Users/igor_shved/Documents/Java/libraries/webDrivers/chromedriver");
         driverChrome = new ChromeDriver();
         driverChrome.manage().window().maximize();
-        driverChrome.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+      driverChrome.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 }
