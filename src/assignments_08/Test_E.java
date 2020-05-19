@@ -3,13 +3,10 @@ package assignments_08;
 import com.example.JSUtils;
 import org.junit.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-
-import java.time.Duration;
-
-import static java.lang.System.out;
 
 public class Test_E extends MyActions{
 
@@ -23,7 +20,7 @@ public class Test_E extends MyActions{
 
     @AfterClass
     public static void quitWebDriver(){
-      //  driverChrome.quit();
+        driverChrome.quit();
     }
 
     @After
@@ -74,5 +71,19 @@ public class Test_E extends MyActions{
     @Test
     public void test_6(){
         driverChrome.findElement(By.xpath("//input[@name = 'pic']")).sendKeys( "/Users/igor_shved/Downloads/jshelper.jar");
+    }
+
+    @Test
+    public void test_7() throws InterruptedException {
+        WebElement buttonToClick = driverChrome.findElement(By.id("clickMe"));
+        JavascriptExecutor js = (JavascriptExecutor)driverChrome;
+        // scroll to element and click;
+//        js.executeScript("arguments[0].scrollIntoView(true);", buttonToClick);
+//        buttonToClick.click();
+//        Thread.sleep(1000);
+//        driverChrome.switchTo().alert().accept();
+       int x =  buttonToClick.getLocation().getX();
+       int y =  buttonToClick.getLocation().getY();
+       js.executeScript("javascript:window.scrollBy("+x+","+y+")");
     }
 }

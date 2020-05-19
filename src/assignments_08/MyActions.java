@@ -23,7 +23,7 @@ public class MyActions {
     protected static void setChromeDriver() {
         System.setProperty("webdriver.chrome.driver", "/Users/igor_shved/Documents/Java/libraries/webDrivers/chromedriver");
         driverChrome = new ChromeDriver();
-        driverChrome.manage().window().maximize();
+    //    driverChrome.manage().window().maximize();
       driverChrome.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
