@@ -10,5 +10,6 @@
     <orderEntry type="library" name="junit" level="project" />
     <orderEntry type="library" name="libs" level="project" />
     <orderEntry type="library" name="jshelper" level="project" />
+    <orderEntry type="library" name="ngwebdriver-1.1.5" level="project" />
   </component>
 </module>
