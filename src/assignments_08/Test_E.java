@@ -4,12 +4,17 @@ import com.example.JSUtils;
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+
+import java.time.Duration;
+
 import static java.lang.System.out;
 
 public class Test_E extends MyActions{
 
    protected Actions act = new Actions(driverChrome);
+   protected Action action;
 
     @BeforeClass
     public static void setWebDriver(){
@@ -18,7 +23,7 @@ public class Test_E extends MyActions{
 
     @AfterClass
     public static void quitWebDriver(){
-        driverChrome.quit();
+      //  driverChrome.quit();
     }
 
     @After
@@ -50,6 +55,24 @@ public class Test_E extends MyActions{
     @Test
     public void test_4(){
         WebElement closeImg = driverChrome.findElement(By.xpath("//img[@id ='close']"));
-        act.moveToElement(closeImg).perform();
+        act.clickAndHold(closeImg).perform();
+    }
+
+    @Test
+    public void test_5(){
+        WebElement first = driverChrome.findElement(By.xpath("//option[@value = 'pizza']"));
+        WebElement second = driverChrome.findElement(By.xpath("//option[@value = 'burger']"));
+        action = act
+                .moveToElement(first)
+                .clickAndHold(first)
+                .pause(1000)
+                .moveToElement(second)
+                .build();
+        action.perform();
+    }
+
+    @Test
+    public void test_6(){
+        driverChrome.findElement(By.xpath("//input[@name = 'pic']")).sendKeys( "/Users/igor_shved/Downloads/jshelper.jar");
     }
 }
