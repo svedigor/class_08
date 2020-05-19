@@ -1,19 +1,13 @@
 package assignments_08;
 
 import com.paulhammant.ngwebdriver.ByAngular;
-import com.paulhammant.ngwebdriver.NgWebDriver;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-import static java.lang.System.out;
-
 public class Test_D extends MyActions {
-    protected static NgWebDriver ngDriver;
     protected static String myName, actualName;
     protected static WebElement firstName;
 
@@ -31,8 +25,7 @@ public class Test_D extends MyActions {
     @Test
     public void test_1(){
         driverChrome.get("https://dgotlieb.github.io/AngularJS/main.html");
-        ngDriver = new NgWebDriver((JavascriptExecutor) driverChrome);
-        ngDriver.waitForAngularRequestsToFinish();
+        setNgWebDriver();
     }
 
     @Test
