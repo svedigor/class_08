@@ -8,8 +8,8 @@ import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
 public class Test_D extends MyActions {
-    protected static String myName, actualName;
-    protected static WebElement firstName;
+    private static String myName, actualName;
+    private static WebElement firstName;
 
     @BeforeClass
     public static void setDriver(){

@@ -10,8 +10,8 @@ import org.openqa.selenium.interactions.Actions;
 
 public class Test_E extends MyActions{
 
-   protected Actions act = new Actions(driverChrome);
-   protected Action action;
+   private Actions act = new Actions(driverChrome);
+   private Action action;
 
     @BeforeClass
     public static void setWebDriver(){
